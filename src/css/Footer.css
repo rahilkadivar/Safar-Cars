@@ -1,0 +1,56 @@
+.footer-widget {
+    margin-bottom: 20px;
+}
+.footer-widget .sfc-footer-logo {
+    margin-bottom: 20px;
+}
+.footer-widget .sesfooter_about {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.footer-widget ._app_links {
+    margin-bottom: 20px;
+}
+.footer-widget .footer-social-media {
+    margin-bottom: 30px;
+}
+.footer-widget .footer-social-media .social-icons .anticon {
+    border: none;
+    padding: 0;
+    color: #000;
+    cursor: pointer;
+    font-size: 25px;
+}
+.footer-widget .footer-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer-widget ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.footer-widget ul li{
+    margin-bottom: 10px;
+}
+.footer-widget ul.footer-menu{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-widget ul.footer-menu li{
+    flex: 0 0 50%;
+}
+.footer-widget ul li a{
+    text-decoration: none;
+    color: #000;
+}
+.footer-widget ul li a:hover{
+    color: #1677ff;
+}
+.footer_buttons button {
+    padding: 10px 25px;
+    height: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+}
