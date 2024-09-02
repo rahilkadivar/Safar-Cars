@@ -3,16 +3,11 @@ import { Layout, Menu, Button, Drawer } from 'antd';
 import {
   FacebookOutlined,
   InstagramOutlined,
-  LinkedinOutlined,
-  YoutubeOutlined,
   HomeOutlined,
   InfoCircleOutlined,
   CarOutlined,
   DollarOutlined,
   PictureOutlined,
-  VideoCameraOutlined,
-  TeamOutlined,
-  SolutionOutlined,
   PhoneOutlined,
   LoginOutlined,
   WhatsAppOutlined,
@@ -139,7 +134,7 @@ const AppHeader = () => {
             <div className="header-top">
               <div className="logo">
                 <Link to={'/'}>
-                  <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="logo" />
+                  <img src={`${process.env.PUBLIC_URL}/logo/black.png`} alt="logo" />
                 </Link>
               </div>
               <div className="right-side">

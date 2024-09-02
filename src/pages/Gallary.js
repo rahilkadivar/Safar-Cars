@@ -5,7 +5,17 @@ import FourImageSection from '../components/FourImageSection'
 const Gallary = () => {
   return (
     <div>
-      <img width={'100%'} src="./images/banner-01.jpg" alt="" />
+      <div>
+        <div className='container-fuild'>
+          <div className='row g-0'>
+            <div className='col-12'>
+              <div className='inner-banner'>
+                <img className='w-100' src={`${process.env.PUBLIC_URL}/images/about-banner-img.jpg`} alt="logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section>
         <div className="container">

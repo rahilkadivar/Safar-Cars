@@ -75,7 +75,7 @@
 }
 
 .logo img {
-  width: 300px;
+  width: 150px;
 }
 
 .right-side {
@@ -201,6 +201,6 @@
 
 @media screen and (max-width: 400px) {
   .logo img {
-    width: 200px;
+    width: 150px;
   }
 }

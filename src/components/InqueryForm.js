@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
 
 const { TextArea } = Input;
 
-const InqueryForm = ({productId, onClose, slug}) => {
+const InqueryForm = ({ productId, onClose, slug }) => {
     const API_BASE_URL = process.env.REACT_APP_API_URL;
     const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
 
-     const handleFinish = async (values) => {
+    const handleFinish = async (values) => {
+        setLoading(true);
         const formData = new FormData();
         formData.append('name', values.name);
         formData.append('mobileNumber', values.mobileNumber);
@@ -16,25 +18,28 @@ const InqueryForm = ({productId, onClose, slug}) => {
         formData.append('message', values.message);
         formData.append('productId', productId);
         formData.append('slug', slug);
-    
+
         try {
             const response = await axios.post(`${API_BASE_URL}/addInquery.php`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-    
+
             if (response.data.status === 'success') {
                 message.success('Form submitted successfully!');
                 onClose();
+                setLoading(false);
             } else {
                 message.error('Failed to submit form: ' + response.data.message);
+                setLoading(false);
             }
         } catch (error) {
             message.error('Error submitting form: ' + error.message);
+            setLoading(false);
         }
     };
-    
+
 
     return (
         <Form
@@ -82,7 +87,7 @@ const InqueryForm = ({productId, onClose, slug}) => {
             </Form.Item>
 
             <Form.Item>
-                <Button type="primary" htmlType="submit" block>
+                <Button loading={loading} type="primary" htmlType="submit" block>
                     Submit
                 </Button>
             </Form.Item>

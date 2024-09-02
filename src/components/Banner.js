@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Carousel } from 'antd';
 import '../css/Banner.css';
+import { Link } from 'react-router-dom';
 
 const contentStyle = {
     margin: 0,
@@ -16,7 +17,7 @@ const Banner = () => {
 
     return (
         <div className='banner'>
-            <Carousel afterChange={onChange}>       
+            <Carousel afterChange={onChange} autoplay draggable >
                 <div>
                     <div style={{
                         ...contentStyle,
@@ -31,13 +32,15 @@ const Banner = () => {
                             <div className='banner-content'>
                                 <h1 className='banner-title'>Sell Your Car At The Best Price</h1>
                                 <p className='banner-description'>Get doorstep pick up and instant payment</p>
-                                <Button className='btn-primary'>Sell Car</Button>
+                                <Link to={'/sellcar'}>
+                                    <Button className='btn-primary'>Sell Car</Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                <div style={{
+                    <div style={{
                         ...contentStyle,
                         backgroundImage: `url('./images/banner-01.jpg')`,
                         backgroundSize: 'cover',
@@ -50,13 +53,15 @@ const Banner = () => {
                             <div className='banner-content'>
                                 <h1 className='banner-title'>Sell Your Car At The Best Price</h1>
                                 <p className='banner-description'>Get doorstep pick up and instant payment</p>
-                                <Button className='btn-primary'>Sell Car</Button>
+                                <Link to={'/sellcar'}>
+                                    <Button className='btn-primary'>Sell Car</Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                <div style={{
+                    <div style={{
                         ...contentStyle,
                         backgroundImage: `url('./images/banner-01.jpg')`,
                         backgroundSize: 'cover',
@@ -69,7 +74,9 @@ const Banner = () => {
                             <div className='banner-content'>
                                 <h1 className='banner-title'>Sell Your Car At The Best Price</h1>
                                 <p className='banner-description'>Get doorstep pick up and instant payment</p>
-                                <Button className='btn-primary'>Sell Car</Button>
+                                <Link to={'/sellcar'}>
+                                    <Button className='btn-primary'>Sell Car</Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

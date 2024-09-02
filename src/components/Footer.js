@@ -4,99 +4,107 @@ import { Button } from 'antd';
 import {
     FacebookOutlined,
     InstagramOutlined,
-    LinkedinOutlined,
-    YoutubeOutlined,
     WhatsAppOutlined,
     PhoneOutlined
-  } from '@ant-design/icons';
+} from '@ant-design/icons';
 import '../css/Footer.css';
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
+
+    const openWhatsAppChat = () => {
+        const phoneNumber = "9327647995";
+
+        const message = `Hello, I have an inquiry regarding your services.`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+    };
+
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticate);
+
+
+
     return (
         <div>
             <section className="footer">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-5">
+                        <div className="col-lg-6">
                             <div className='footer-widget'>
                                 <div className='sfc-footer-logo'>
-                                    <img src={`${process.env.PUBLIC_URL}/images/logo.png`} width={300} alt="logo" />
+                                    <img src={`${process.env.PUBLIC_URL}/logo/black.png`} width={200} alt="logo" />
                                 </div>
                                 <div class="sesfooter_about">
-                                    <p>Welcome to Jolly Motors, your one-stop destination for finding top-quality used cars that you can trust. With years of experience in the automotive industry, we have established ourselves as a reputable and reliable source for pre-owned vehicles. Our mission is to provide our customers with a seamless and enjoyable car buying experience, offering a diverse selection of well-maintained used cars to meet various needs and preferences.</p>
+                                    <p>Welcome to Sasfar Cars, your trusted destination for top-quality used vehicles. With years of experience in the automotive industry, we pride ourselves on offering a seamless car buying experience. Explore our diverse selection of well-maintained pre-owned cars to find the perfect match for your needs.</p>
                                 </div>
                                 <div className='footer-social-media'>
                                     <div className="social-icons">
-                                        <FacebookOutlined />
-                                        <InstagramOutlined />
-                                        <WhatsAppOutlined />
+                                        <Link to={'https://facebook.com'} target='blank'>
+                                            <FacebookOutlined />
+                                        </Link>
+                                        <Link to={'https://instagram.com'} target='blank'>
+                                            <InstagramOutlined />
+                                        </Link>
+                                        <Link onClick={openWhatsAppChat}>
+                                            <WhatsAppOutlined />
+                                        </Link>
                                     </div>
                                 </div>
-                                <div class="_copyright">©2024 Copyright Jolly Motors. All Rights Reserved.</div>
+                                <div class="_copyright">©2024 Copyright Safar Cars. All Rights Reserved.</div>
                             </div>
                         </div>
-                        <div className="col-lg-7">
+                        <div className="col-lg-6">
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className='footer-widget'>
                                         <h4 className='footer-title'>Pages</h4>
                                         <ul className='footer-menu'>
                                             <li>
-                                                <Link to="javascript:void(0)">Home</Link>
+                                                <Link to="/">Home</Link>
                                             </li>
                                             <li>
-                                                <Link to="javascript:void(0)">Buy Car</Link>
+                                                <Link to="/about">About</Link>
                                             </li>
                                             <li>
-                                                <Link to="javascript:void(0)">Sell Car</Link>
+                                                <Link to="/buycar">Buy Car</Link>
                                             </li>
                                             <li>
-                                                <Link to="javascript:void(0)">Music</Link>
+                                                <Link to="/sellcar">Sell Car</Link>
                                             </li>
                                             <li>
-                                                <Link to="javascript:void(0)">Our Team</Link>
+                                                <Link to="/gallery">Gallery</Link>
                                             </li>
                                             <li>
-                                                <Link to="javascript:void(0)">Contact</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="javascript:void(0)">About</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="javascript:void(0)">Inquiry</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="javascript:void(0)">Gallery</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="javascript:void(0)">Videos</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="javascript:void(0)">Careers</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="javascript:void(0)">Pay</Link>
+                                                <Link to="/contact">Contact</Link>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="col-md-3">
-                                    <div className='footer-widget'>
-                                        <h4 className='footer-title'>FAQ's</h4>
-                                        <ul>
-                                            <li>
-                                                <Link to="javascript:void(0)">Buying a Used Car</Link>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="col-md-3">
-                                    <div className='footer-widget'>
+
+                                <div className="col-md-6">
+                                    <div className='footer-widget' style={{ textAlign: 'center' }}>
                                         <h4 className='footer-title'>Other</h4>
                                         <ul>
                                             <li>
-                                                <Link to="javascript:void(0)">Privacy & Terms of Service</Link>
+                                                <Link to="javascript:void(0)">Privacy Policy</Link>
                                             </li>
+                                            <li>
+                                                <Link to="javascript:void(0)">Terms of Service</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/buycar">Buying a Used Car</Link>
+                                            </li>
+                                            {!isAuthenticated && (
+                                                <>
+                                                    <li>
+                                                        <Link to="/login">Login</Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to="/register">Ragister</Link>
+                                                    </li>
+                                                </>
+                                            )}
                                         </ul>
                                     </div>
                                 </div>
@@ -104,9 +112,16 @@ const Footer = () => {
                             <div className='row'>
                                 <div className='col-12'>
                                     <div className='footer_buttons'>
-                                        <Button type="primary" icon={<PhoneOutlined />}>9327647995</Button>
-                                        <Button type="default">Login</Button>
-                                        <Button type="default">Sign Up</Button>
+                                        <Link to={'tel:9327647995'} target='blank'>
+                                            <Button type="default" icon={<PhoneOutlined />}>9327647995</Button>
+                                        </Link>
+                                        <Link to={'/buycar'}>
+                                            <Button type="primary">Buy</Button>
+                                        </Link>
+                                        <Link to={'/sellcar'}>
+                                            <Button type="primary">Sell</Button>
+                                        </Link>
+                                        
                                     </div>
                                 </div>
                             </div>

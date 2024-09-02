@@ -7,33 +7,39 @@ const GalleryAlbum = () => {
     const [currentImage, setCurrentImage] = useState(null);
 
     const galleryImages = {
-        album1: ['./images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg'],
+        album1: ['./images/gallary/001.jfif',
+            './images/gallary/002.jfif',
+            './images/gallary/003.jfif',
+            './images/gallary/004.jfif',
+            './images/gallary/005.jfif',
+            './images/gallary/006.jfif',
+            './images/gallary/007.jfif',
+        ],
 
-        album2: ['./images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg'],
+        album2: ['./images/gallary/001.jfif',
+            './images/gallary/002.jfif',
+            './images/gallary/003.jfif',
+            './images/gallary/004.jfif',
+            './images/gallary/005.jfif',
+            './images/gallary/006.jfif',
+            './images/gallary/007.jfif',
+        ],
 
-        album3: ['./images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg'],
+        album3: ['./images/gallary/001.jfif',
+            './images/gallary/002.jfif',
+            './images/gallary/003.jfif',
+            './images/gallary/004.jfif',
+            './images/gallary/005.jfif',
+            './images/gallary/006.jfif',
+            './images/gallary/007.jfif'],
 
-        album4: ['./images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg',
-            './images/banner-01.jpg']
+        album4: ['./images/gallary/001.jfif',
+            './images/gallary/002.jfif',
+            './images/gallary/003.jfif',
+            './images/gallary/004.jfif',
+            './images/gallary/005.jfif',
+            './images/gallary/006.jfif',
+            './images/gallary/007.jfif']
     };
 
     const openModal = (images, image) => {

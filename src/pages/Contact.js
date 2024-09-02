@@ -2,13 +2,22 @@ import { Card, Col, Row } from 'antd'
 import React from 'react'
 import ContactForm from '../components/ContactForm'
 import { ClockCircleOutlined, EnvironmentOutlined, MailOutlined, MobileOutlined, WhatsAppOutlined } from '@ant-design/icons'
+import FourImageSection from '../components/FourImageSection'
 
 const Contact = () => {
   return (
     <div>
-      <section className='p-0'>
-        <img width={'100%'} src="./images/banner-01.jpg" alt="" />
-      </section>
+      <div>
+        <div className='container-fuild'>
+          <div className='row g-0'>
+            <div className='col-12'>
+              <div className='inner-banner'>
+                <img className='w-100' src={`${process.env.PUBLIC_URL}/images/about-banner-img.jpg`} alt="logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section className='pb-0'>
         <div className="container">
@@ -31,7 +40,7 @@ const Contact = () => {
           </Row>
 
           <Row className='form-section'>
-            <Col  style={{ backgroundColor: '#f5f5f5' }}>
+            <Col style={{ backgroundColor: '#f5f5f5' }}>
               <ContactForm />
             </Col>
             <Col className='contact_info' >
@@ -118,6 +127,9 @@ const Contact = () => {
         ></iframe>
       </section>
 
+      <section style={{paddingTop:'0'}}>
+        <FourImageSection />
+      </section>
 
     </div>
   )

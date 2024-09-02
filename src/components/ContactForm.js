@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
 
@@ -7,8 +7,10 @@ const { TextArea } = Input;
 const ContactForm = () => {
     const API_BASE_URL = process.env.REACT_APP_API_URL;
     const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
 
     const handleFinish = async (values) => {
+        setLoading(true);
         const formData = new FormData();
         formData.append('name', values.name);
         formData.append('mobileNumber', values.mobileNumber);
@@ -24,11 +26,14 @@ const ContactForm = () => {
     
             if (response.data.status === 'success') {
                 message.success('Form submitted successfully!');
+                setLoading(false);
             } else {
                 message.error('Failed to submit form: ' + response.data.message);
+                setLoading(false);
             }
         } catch (error) {
             message.error('Error submitting form: ' + error.message);
+            setLoading(false);
         }
     };
     
@@ -79,7 +84,7 @@ const ContactForm = () => {
             </Form.Item>
 
             <Form.Item>
-                <Button type="primary" htmlType="submit" block>
+                <Button loading={loading} type="primary" htmlType="submit" block>
                     Submit
                 </Button>
             </Form.Item>
