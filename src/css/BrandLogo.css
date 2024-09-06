@@ -1,0 +1,62 @@
+.brand-logo-list ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.brand-logo-list ul li {
+    width: 16.66%;
+    padding: 0.625rem;
+    cursor: pointer;
+}
+.brand-logo-list ul li .brand-a {
+    background: #ffffff;
+    border-radius: 0.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.625rem;
+    transition: all 500ms ease 0s;
+    text-decoration: none;
+}
+.brand-logo-list ul li .brand-a:hover {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, .08);
+}
+.brand-logo-list ul li .brand-a img {
+    margin: 0.625rem 0;
+    height: 1.875rem;
+    object-fit: contain;
+}
+.brand-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #626262;
+}
+
+
+@media (max-width: 991px) {
+
+        .brand-logo-list ul li {
+            width: 20%;
+        }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .brand-logo-list ul li {
+        width: 30%;
+    }
+
+}
+
+@media (max-width: 479px) {
+    .brand-logo-list ul li {
+        width: 50%;
+    }
+}

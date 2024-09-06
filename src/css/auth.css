@@ -1,0 +1,30 @@
+/* Login Form */
+
+#auth-form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 75vh;
+    background-color: #f0f2f5;
+    padding: 50px 0;
+}
+
+.auth_form_card {
+    width: 800px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#auth-form .ant-form-item-label {
+    text-align: left;
+}
+
+#auth-form .ant-input-number {
+    width: 100%;
+}
+
+#auth-form .ant-picker {
+    width: 100%;
+}
